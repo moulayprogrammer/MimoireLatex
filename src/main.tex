@@ -1,0 +1,234 @@
+%! Author = moulay
+%! Date = 10/21/19
+
+% Preamble
+\documentclass[english,a4,12pt]{report}
+
+% Packages
+\usepackage{amsmath}
+\usepackage[utf8]{inputenc}
+\usepackage{xcolor}
+\usepackage[T1]{fontenc}
+\usepackage{arabtex}
+\usepackage{sectsty}
+\usepackage[cyr]{aeguill}
+\usepackage{rotating}
+\usepackage{multirow}
+\usepackage{tabulary}
+\usepackage{tabularht}
+\usepackage{acronym}
+\usepackage{fancyhdr}
+\usepackage{lscape}
+\usepackage{amssymb}
+\usepackage{pifont}
+\usepackage[most]{tcolorbox}
+\usepackage{slashbox}
+\usepackage{multido}
+\usepackage{caption}
+\usepackage{graphicx,wrapfig,lipsum}
+\usepackage{enumitem}
+\usepackage {fancybox}
+\usepackage{array,tabularx}
+\usepackage{colortbl}
+\usepackage[noend]{algorithmic}
+\usepackage[linesnumbered,ruled,vlined,boxed,commentsnumbered]{algorithm2e}
+\DeclareGraphicsExtensions{.jpg,.pdf,.PNG,.gif}
+\usepackage[pdftex,colorlinks=true,linkcolor=black,citecolor=black,urlcolor=black]{hyperref}
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\usepackage{subcaption}
+\usepackage[tikz]{bclogo}
+\pgfplotsset{grid style={dashed,gray}}
+\pgfplotsset{minor grid style={dotted,green!50!black}}
+\pgfplotsset{major grid style={dotted,green!50!black}}
+\usepackage{anysize}
+\marginsize{30mm}{20mm}{15mm}{15mm}
+\newcolumntype{Y}{>{\raggedleft\arraybackslash}X}
+\renewcommand{\baselinestretch}{1.5}
+\newcolumntype{P}[1]{>{\raggedright}p{#1}}
+\newcolumntype{M}[1]{>{\raggedright}m{#1}}%%declaration de page de garde
+\newcommand*\rfrac[2]{{}^{#1}\!/_{#2}}
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{59}}%
+
+% Document
+\begin{document}
+    \sloppy
+    \begin{titlepage}
+        \renewcommand{\baselinestretch}{1}
+        \begin{center}
+            \begin{RLtext}
+                AljmhwryT AljzA'iryT AldymqrA.tyT Al^s`byT
+            \end{RLtext}
+            {PEOPLE'S DEMOCRATIC REPUBLIC OF ALGERIA}
+            \begin{RLtext}
+            {wzArT Alt`lym Al`Aly w Alb.h_t Al`lmy}
+            \end{RLtext}
+            {DEPARTMENT OF HIGHER EDUCATION AND SCIENTIFIC RESEARCH}
+            \begin{RLtext}
+                jAm`T mus.taf_A s.tmbOly bim`skar
+            \end{RLtext}
+            {UNIVERSITY OF MUSTAPHA STAMBOULI MASCARA}
+            \begin{figure}[h]
+            	\centering
+            		\includegraphics[width=4cm]{figurs/logouniv.jpeg}
+            \end{figure}
+            \begin{RLtext}
+                klyT Al`lwm AldaqyqaT
+            \end{RLtext}
+            {FACULTY OF EXACT SCIENCES}\\
+            {COMPUTER SCIENCE DEPARTMENT}\\
+            \textsc{\textbf{ \large Master memory} }
+        \end{center}
+        {\bfseries field :} Mathematics and Computer Science\\
+        {\bfseries Faculty  {\hspace*{0.34cm}} :} Computer Science\\
+        {\bfseries Option {\hspace*{0.26cm}} :} Networks and distributed system
+        \vspace{0.5cm}
+        \begin{center}
+            \textsc{\textbf{ \large Realized by :}}\\
+            {\bfseries Elkaim Moulay Abdellah }{\hspace*{5cm}}{\bfseries Mazouz  Nail}   \\
+            \vspace{1cm}
+            \Large {\bfseries Theme }
+        \end{center}
+        \begin{center}
+            \hrule width 460pt
+            \bigskip
+            \Large  \centering \textbf{ \textsc{ ................. } }
+            \bigskip
+            \hrule width 460pt
+        \end{center}
+        \raggedright
+        \bigskip
+        \vspace{1cm}
+        \textit{\bfseries Proposed by : Dr. Madber Hayat }
+        \vspace{2cm}
+        \begin{center}
+            \textit{\bfseries College year 2019/2020}
+        \end{center}
+    \end{titlepage}
+
+    %%Dedicaces%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    \thispagestyle{empty}
+    \begin{figure}[h]
+    	\centering
+    		\includegraphics[width=14cm]{figurs/B.PNG}
+    \end{figure}
+    \newpage
+    \thispagestyle{empty}
+    \clearpage
+    \newpage
+    \pagenumbering{roman}
+    \begin{center}
+        \textbf{\\}
+        \textbf{\\}
+        \textbf{\huge \textsc{\itshape Dedications}}\\
+        \textbf{\\}
+        \textbf{\\}
+        \begin{flushleft}
+            \textsf{\qquad I dedicate this work to ............. }\\
+        \end{flushleft}
+    \end{center}
+    \begin{flushright}
+        \textbf{\textsc{\itshape Elkaim Moulay Abdellah}}
+    \end{flushright}
+    \newpage
+    \begin{center}
+        \textbf{\\}
+        \textbf{\\}
+        \textbf{\huge \textsc{\itshape Dedications}}\\
+        \textbf{\\}
+        \textbf{\\}
+
+        \begin{flushleft}
+            \textsf{\qquad I dedicate this work to ...................... }
+        \end{flushleft}
+
+        \normalsize{\itshape .....}
+        \textbf{\\}
+        \textbf{\\}
+    \end{center}
+    \begin{flushright}
+        \textbf{\textsc{\itshape Mazouz Nail}}
+    \end{flushright}
+
+    %%Remerciement%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \newpage
+    \begin{center}
+        %\thispagestyle{myheadings}
+        %\markboth{droite}{ }
+        \textbf{\huge \textsc{\itshape thanks}}
+    \end{center}
+    \textsf{\qquad We thank .......... }
+
+    %%Abstract %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \newpage
+    \markboth{droite}{ }
+    \begin{center}
+    \textbf{\huge \textsc{\itshape \textit Abstract}}\\
+    \end{center}
+    \qquad ...........................
+
+    %%resume %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \newpage
+    \newcommand{\enteteresume}{\markboth{Resume}{Resume}} %il faut ajouter les commandes
+    \begin{center}
+    \textbf{\huge \textsc{\itshape \textit Résumé}}\\
+    \end{center}
+    \qquad ...............................
+
+    % La table des matieres%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \tableofcontents
+    \listoffigures
+    \listoftables
+
+    %% introduction generale%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \chapter*{General Introduction}
+    \addcontentsline{toc}{chapter}{Introduction générale}
+    \setcounter{page}{1}
+    \lhead{}
+    \cfoot{\bfseries \thepage}
+    \rhead{Introduction générale}
+    \pagenumbering{arabic}
+
+    ..................................................
+
+    %% chapitre 1%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \include{chapiter1/main}
+
+    %% chapitre 2%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \include{chapiter2/main}
+
+    %% conclusion generale%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \chapter*{General conclusion}
+    \addcontentsline{toc}{chapter}{General conclusion}
+    \lhead{}
+    \cfoot{\bfseries \thepage}
+    \rhead{General conclusion}
+    \markboth{droite}{General conclusion}
+
+    .............................................
+
+    %%References%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \clearpage
+    \pagestyle{fancy}
+    \addcontentsline{toc}{chapter}{Bibliography}
+    \begin{thebibliography}{99}
+        \lhead{}
+        \cfoot{\bfseries \thepage}
+        \rhead{Bibliography}
+
+        \bibitem[1]{1}
+        H. Altaama,
+        Application Mobile Guide,
+        Mémoire de Master en Informatique,
+        Université Abou Bakr Belkaid de Tlemcen,
+        2016.
+        \bibitem[2]{2}
+        \url{http://generationmobiles.net/2014/11/les-differents-types-dapps-mobiles/}, [consulté le 14/03/2018].
+
+    \end{thebibliography}
+
+\end{document}

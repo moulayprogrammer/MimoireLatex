@@ -1,0 +1,1151 @@
+\documentclass[french,a4,12pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{xcolor}
+\usepackage[T1]{fontenc}
+\usepackage[frenchb]{babel}
+\usepackage{arabtex}
+\usepackage{sectsty}
+\usepackage[cyr]{aeguill}
+\usepackage{rotating}
+\usepackage{multirow}
+\usepackage{tabulary}
+\usepackage{tabularht}
+\usepackage{acronym}
+\usepackage{fancyhdr}
+\usepackage{lscape}
+\usepackage{amssymb}
+\usepackage{pifont}
+%\usepackage{amsfonts}
+\usepackage[most]{tcolorbox}
+\usepackage{slashbox}
+\usepackage{multido}
+\usepackage{amsmath}
+\usepackage{caption}
+\usepackage{graphicx,wrapfig,lipsum}
+\usepackage{enumitem}
+\usepackage {fancybox}
+ \usepackage{array,tabularx}
+\usepackage{colortbl}
+%\usepackage[printonlyused]{acronym}
+\usepackage[noend]{algorithmic}
+\usepackage[linesnumbered,ruled,vlined,boxed,commentsnumbered]{algorithm2e}
+\DeclareGraphicsExtensions{.jpg,.pdf,.PNG,.gif}
+\usepackage[pdftex,colorlinks=true,linkcolor=black,citecolor=black,urlcolor=black]{hyperref}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+%
+\usepackage{subcaption}
+\usepackage[tikz]{bclogo}
+%
+\pgfplotsset{grid style={dashed,gray}}
+\pgfplotsset{minor grid style={dotted,green!50!black}}
+\pgfplotsset{major grid style={dotted,green!50!black}}
+\usepackage{anysize}
+\marginsize{30mm}{20mm}{15mm}{15mm}
+%\usepackage{natbib}
+\newcolumntype{Y}{>{\raggedleft\arraybackslash}X}
+\renewcommand{\baselinestretch}{1.5}
+\newcolumntype{P}[1]{>{\raggedright}p{#1}}
+\newcolumntype{M}[1]{>{\raggedright}m{#1}}%%declaration de page de garde
+\newcommand*\rfrac[2]{{}^{#1}\!/_{#2}}
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{59}}%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[pages=some]{background}
+%	\backgroundsetup{
+%	scale=1,
+%	color=black,
+%	opacity=0.4,
+%	angle=0,
+%	contents={%
+%		\includegraphics[width=\paperwidth,height=\paperheight]{android.png}
+%	}%
+%}
+
+\tcbset{colback=blue!5!white,colframe=blue!75!black}
+\begin{document}
+\sloppy
+\begin{titlepage}
+\renewcommand{\baselinestretch}{1}
+\begin{center}
+\begin{RLtext}
+AljmhwryT AljzA'iryT AldymqrA.tyT Al^s`byT
+\end{RLtext}
+{REPUBLIQUE ALGERIENNE DEMOCRATIQUE ET POPULAIRE}
+\begin{RLtext}
+{wzArT Alt`lym Al`Aly w Alb.h_t Al`lmy}
+\end{RLtext}
+{MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE SCIENTIFIQUE} 
+\begin{RLtext}
+jAm`T `mAr _tlyjy biAl'a.gwA.t
+\end{RLtext}
+{UNIVERSITE AMAR TELIDJI LAGHOUAT}
+%\begin{figure}[h]
+%	\centering
+%		\includegraphics[width=4cm]{tel/logo}
+%\end{figure}
+\begin{RLtext}
+klyT Al`lwm
+\end{RLtext} 
+{FACULTE DES SCIENCES}\\
+{DEPARTEMENT D'INFORMATIQUE}\\
+\textsc{\textbf{ \large Mémoire de Licence} }
+\end{center}
+{\bfseries Domaine :} Mathématiques et Informatique\\
+{\bfseries Filière  {\hspace*{0.34cm}} :} Informatique\\
+{\bfseries Option {\hspace*{0.26cm}} :} Systèmes et Réseaux Informatiques
+\begin{center}
+\textsc{\textbf{ \large Par :}}\\
+{\bfseries Ramdan Yacine }{\hspace*{5cm}}{\bfseries Debinou Abdelfattah}   \\
+\Large {\bfseries Thème } 
+\end{center}
+\begin{center}
+\hrule width 460pt
+\bigskip
+  \Large  \centering \textbf{ \textsc{ Conception et réalisation d'une application mobile de vente des immobiliers} }
+\bigskip
+\hrule width 460pt
+\end{center}
+\raggedright
+\bigskip
+\textit{\bfseries Proposé par $M^{lle}$: Bousbaa Fatima Zohra } 
+%\vspace{0.2cm}
+ \begin{center}
+   \textit{\bfseries Année Universitaire 2017/2018}  
+\end{center}
+\end{titlepage}
+%% Packages for Graphics & Figures %%%%%%%%%%%%%%%%%%%%%%%%%%
+%%Dedicaces%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\thispagestyle{myheadings}
+%\markboth{droite}{ }
+%\pagenumbering{roman} \setcounter{page}{1}
+\thispagestyle{empty}
+
+%\begin{figure}[h]
+%	\centering
+%		\includegraphics[width=14cm]{tel/bbbbbb}
+%\end{figure}
+\newpage
+\thispagestyle{empty}
+\clearpage
+\newpage
+\pagenumbering{roman}
+\begin{center}
+\textbf{\\}
+\textbf{\\}
+\textbf{\huge \textsc{\itshape Dédicaces}}\\
+\textbf{\\}
+\textbf{\\}
+\begin{flushleft}
+\textsf{\qquad Je dédie ce travail 
+À mes chers parents, qui sont la cause de mon existence dans cette vie, pour leurs soutient, leurs patience et leurs amour qui m'ont donné la force pour continuer mes études. À mes frères et soeurs à qui je souhaite la réussite. À tous mes meilleurs amis dont la liste est longue. À toute ma grande famille. À tous mes amis et à tous mes enseignants.
+}\\
+\end{flushleft}
+
+\end{center}
+\begin{flushright}
+\textbf{\textsc{\itshape Ramdane Yacine}}
+\end{flushright}
+\newpage
+\begin{center}
+\textbf{\\}
+\textbf{\\}
+\textbf{\huge \textsc{\itshape Dédicaces}}\\
+\textbf{\\}
+\textbf{\\}
+
+\begin{flushleft}
+\textsf{\qquad Je dédie ce mémoire à 
+À mes chers parents, Que nulle dédicace ne puisse exprimer ce que je leurs dois, pour leurs bienveillance, leurs affection et leurs soutien trésors de bonté, de générosité. À mes chers frères et søeurs, En témoignage de mes sincères reconnaissances pour les efforts qu'ils ont. Consenti pour l'accomplissement de mes études. Je leurs dédie ce modeste travail en témoignage de mon grand
+À tous mes amis pour leurs aide et leurs soutien moral durant l'élaboration du travail de fin d'études. À toute ma famille. À tout ceux qui m'aiment, un grand MERCI à tous.}
+\end{flushleft}
+
+\normalsize{\itshape .....}
+\textbf{\\}
+\textbf{\\}
+\end{center}
+\begin{flushright}
+\textbf{\textsc{\itshape Debinou Abdelfettah}}
+\end{flushright}
+
+%%Remerciement%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\begin{center}
+%\thispagestyle{myheadings}
+%\markboth{droite}{ }
+\textbf{\huge \textsc{\itshape Remerciement}}
+\end{center}
+\textsf{\qquad Nous remercions ALLAH qui nous a permis d’arriver jusque-là, Grand merci a notre encadreur Bousbaa Fatima Zohra  pour son encadrement, sa compréhension et sa gentillesse durant tout le long de notre mémoire. Nous adressons nos sincères remerciements a tous les collègues, intervenantes et toutes les personnes qui par leurs paroles, leurs écrits, leurs conseils et leurs critiques ont guide nos réflexions  à nos rencontrer et répondre a nos questions durant nos recherches. Nous tenons à remercier toute personne qui a participé de prés ou de loin.
+Nous remercions aussi le chef de département Mr. Lahcen Bensaad et tous le enseignants de département d'informatique.}
+
+
+
+
+
+
+
+
+%%resume%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\newpage
+%\thispagestyle{myheadings}
+%\markboth{droite}{ }
+%\begin{center}
+%\textbf{\huge \textsc{\itshape \textit Résumé}}\\
+%\end{center}
+%\qquad Ce projet se pose comme une initiative proposant l'étude, la conception ainsi que la réalisation d’une application Android  qui contient les annonces de personnes qui veulent publier  pour vente ou  louer ces immobilier ,ou bien les personnes qui veulent chercher pour acheter les imoobilier.\\
+
+%Cette application basé sur le system authentification, chauqe personnes utilise sa personnle compt pour publier et chercher.
+
+
+
+
+
+
+
+
+
+%\newpage
+%\newcommand{\enteteresume}{\markboth{Resume}{Resume}} %il faut ajouter les commandes
+%%resume%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\begin{center}
+%\thispagestyle{headings}
+%\textbf{\huge \textsc{\itshape \textit Abstract}}\\
+%\end{center}
+%\qquad This project arises like an initiative proposing the study, the design as well as the realization of an application Android which contains the advertisements of people who want to publish for sale or to rent these real estate, or the people who want to look for to buy real estate .
+%This application based on the authentication system, each person uses his personal account to publish and search.
+
+
+
+%\textbf{\\}
+\normalsize{\itshape  }
+\newpage
+% La table des matieres%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\tableofcontents
+\listoffigures
+\listoftables
+
+
+%% introduction generale%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter*{Introduction générale}
+\addcontentsline{toc}{chapter}{Introduction générale}
+\setcounter{page}{1}
+\lhead{}
+\cfoot{\bfseries \thepage}
+\rhead{Introduction générale}
+
+\pagenumbering{arabic}
+%Au cours de cette dernière décennie, les technologies mobiles sont devenue indispensable dans tous les domaines, grâce à l'utilisation des terminaux mobiles.
+Il ne fait désormais plus aucun doute que l'informatique est la révolution la plus importante et la plus innovante qui marqua la vie de l'humanité moderne. Ses logiciels et ses méthodes de conception et de développement ont vu l'avènement de technologies quotidiennement utilisées, comme l'apparition des applications mobiles qui sont capables  de satisfaire  un  large  éventail  de  besoins,  sans  oublier  un  développement  technologique continu qui en fait un outil encore plus essentiel.
+
+Dans ce cadre, l'objectif  de  notre  projet  présenté  dans  ce  mémoire  est  l'étude    des  applications  mobiles  et leurs  techniques  et  outils  de  développement afin de construire  une  application  mobile   de vente des immobiliers à  l’aide  de  la technologie   Android  et  les  outils  correspondants.  C'est  une application qui permet de chercher et de vendre des immobiliers selon le prix, la position,...etc.
+
+Ce rapport est composé de trois chapitres qui sont organisés comme suit:
+\begin{itemize}
+	\item le premier chapitre consiste à la présentation des applications mobiles et les systèmes d'exploitation mobiles.
+	\item Dans le deuxime chapitre,  nous élaborons une conception détaillée des cas d'utilisation, les diagrammes d'activité, ainsi que le diagramme de classe complet de notre application.
+	\item Le dernier chapitre comprend la description de l'application développée et les outils de developpement.
+	\item Finalement, on termine le mémoire par une conclusion qui résume notre travail et donne quelques améliorations futures.
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% chapitre 1%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagestyle{fancy}
+\chapter{Développement Mobile: Vue	générale }
+\chead{}
+\lhead{\bfseries \chaptername {\,} \thechapter }
+\cfoot{\bfseries \thepage}
+\rhead{}
+\rhead{\bfseries Développement Mobile: Vue	générale}
+
+\begin{tcolorbox}[leftrule=3mm]
+\section{Introduction}
+\end{tcolorbox}
+%\quad La technologie est devnu une pilier trés inmportant dans notre vie , On l'utilise de facont sous différent formes tells les application qui ont envahit les duverses domaine depuis leur apprition recent avec la creatoin du premier SmartPhone en 1992. la valeur des applicaiton vari selon la facon de chaqune d'elles . encors tous les appareill elctronic mobile . \\
+\quad  \textsf{Au cours de ces dernières années, les applications mobiles constituent une place trés importante et un domaine de recherche prometteur qui intéresse de plus en plus la communauté scientifique, où un très grand nombre d'applications est proposé aux utilisateurs en offrant plusieurs services qui permettent de simplifier notre vie cotidienne.}
+
+%, et dane ces  annes deriniére cettes application a etait en revolution a cause de la mouvement de  le developpement  , et le concours entre les devloppeur et les grand société , Samsung, Apple ...etc, Cette derniére presente des différent service et simplifie la  vie selon ces différent service.\\
+
+
+\quad \textsf{Dans ce chapitre, nous présentons une description détaillée des applications mobiles et  des systèmes d'exploitations mobiles. Nous terminons ce chapitre par une conclusion.}
+
+
+%\quad Donc, c'est quoit un application ?, c'est qouit un system d'exploitation mobile ? \\
+\begin{tcolorbox}[leftrule=3mm]
+\section{Les applications mobiles}
+\end{tcolorbox}
+\begin{tcolorbox}[colframe=green!75,rightrule=0.5cm,leftrule=0.5cm,]
+	\subsection{  Définition }
+\end{tcolorbox}
+%\quad L' application mobile est un ensembles des programmes  relier entre eus pour faire certain activités au niveau des  appareils inteligent, autrement dit que l'application est une logicel que l'on peut installé dans les appareils inteligent ,SmatrPhone,Tablet,wear..etc.\\   
+%wikipedia
+\quad \textsf{ Une application mobile est un logiciel applicatif développé pour un appareil électronique mobile, tel qu'un assistant personnel, un téléphone portable, un smartphone, un baladeur numérique, une tablette tactile, ou encore certains ordinateurs fonctionnant avec le système d'exploitation Windows Phone} \cite{1}.\\
+
+\textsf{Il y'a plusieurs fonctionnalités sont populaires sur les plateformes mobiles:}
+\begin{itemize}%[label=\textcolor{blue}{$\rhd$}]
+	\item \textit{Les jeux mobiles;}
+	\item \textit{Les services permettant la localisation de l'utilisateur;}
+	\item \textit{ Les opérations bancaires;}
+	\item  \textit{Partage d'information avec les utilisateurs à proximité;} 
+	\item \textit{ Des applications médicales mobiles;}
+	\item  \textit{La réalité virtuelle;}
+	\item  \textit{L'écoute de musiques ou de radios;}
+	\item  \textit{La visualisation de vidéos ou de chaines de télévision;}
+	\item  \textit{La consultation d'Internet;}
+	\item  \textit{Les réseaux sociaux généraux ou spécialisés.}
+\end{itemize}
+
+
+
+\begin{tcolorbox}[colframe=green!75,rightrule=0.5cm,leftrule=0.5cm,]
+\subsection { Les types des applications mobiles}
+\end{tcolorbox}
+\begin{itemize}%[label=\textcolor{blue}{$\rhd$}]
+%[label=\textcolor{blue}{\arabic*.}]
+	\item{ \underline{ \textbf{Applications Natives:}}}
+	\quad \textsf{ Ces applications correspondent à des logiciels créés uniquement pour une plateforme mobile spécifique. Le développement de ces logiciels se fait au travers du Software Développent Kit (SDK) de la plateforme mobile. Le nom de ces applications vient du fait qu'elles sont développées exclusivement avec le langage « natifs », par exemple le langage JAVA. Les applications natives sont téléchargées à partir d'une plateforme de téléchargement qui est souvent un Store applicatif. C'est par exemple le cas pour l'Apple store ou encore Google Play} \cite{2}.\\
+	\item{ \underline{ \textbf{Avantages et Inconvénients:}}}
+	\begin{itemize}%[label=\textcolor{blue}{$\rhd\rhd$}]
+		\item Ces applications sont capables d'utiliser l'ensemble des fonctionnalités du mobile et peuvent être utilisées sans avoir accès à Internet.
+		\item  Elles s'adaptent notamment à de nouveaux « business model » par exemple les applications de type « freemium », ou l'installation est gratuite, avec en plus, la possibilité d'avoir accès à des options supplémentaires, mais qui elles sont payantes.\\
+		Cependant, certains inconvénients peuvent être soulevés :
+		\item  Les applications natives prennent du temps à être développées et sont relativement coûteuses.
+		\item  S'ajoutent d'éventuels problèmes de rétrocompatibilité, en raison notamment de la création de nouvelles versions du système d'exploitation.
+	\end{itemize}
+	\item{ \underline{ \textbf{Applications Web:}}}
+	\textsf{Elles correspondent à des sites Web qui sont conçus spécialement pour un affichage optimisé pour mobile. Pour accéder à ces sites Web, on utilise le navigateur Internet qui est sur le mobile. Ces applications mobiles sont développées principalement à partir de technologies Web comme le HTML ou encore CSS \cite{2}.}\\ 
+	\item{ \underline{ \textbf{Avantages et Inconvénients:}}}
+	\begin{itemize}%[label=\textcolor{blue}{$\rhd\rhd$}]
+		\item Leur code unifié permet la comptabilité avec tous les navigateurs, cela permet aux applications Web d'être développées plus rapidement et donc d'obtenir une réduction conséquente des coûts du projet.
+		\item  De plus, les Web App sont simples à développer sur ces plateformes, puisque celles-ci ne les soumettent pas au test de validation.\\
+		Cependant, elles ont un inconvénient:
+		\item  Un de taille, elles n'ont pas accès à toutes les fonctions présentes sur le mobile. Par exemple, il leur est impossible d'accéder au répertoire du mobile.
+	\end{itemize}
+	
+	\item{ \underline{ \textbf{Applications Hybrides:}}}
+	\textsf{Ces dernières sont considérées comme un mix, entre les applications web et les les applications natives.  En effet, elles sont compatibles avec toutes les plateformes mobiles. Mais ces applications sont principalement développées à l'aide d'HTML,  qui est très performant mais qui utilisent aussi d'autres langages Web comme le CSS et le JavaScript \cite{2}.\\
+	Ainsi, une application dite hybride, contrairement à une application native, n'est pas dépendante d'une plateforme mobile en particulier. De la même manière, et contrairement aux applications Web, les applications hybrides peuvent accéder à toutes les fonctions présentes sur le mobile. Cela est rendu possible par des liens qui sont faits entre le langage natif et la technologie Web présente dans l'application hybride.}\\
+	
+	\item{ \underline{ \textbf{Avantages et Inconvénients:}}}
+	Un des principaux avantages de l'application hybride est qu'elle est plus facile et plus rapide à développer qu'une app native. La maintenance de l'application sera également plus facile puisqu'il n'y a qu'une seule version à revoir pour plusieurs plateformes. Cependant, toutes ces facilités ont un prix : les performances de l'application sont moins bonnes et moins stables puisque le système est moins adapté à chaque plateforme \cite{3}.
+\end{itemize}
+\newpage
+\begin{tcolorbox}[leftrule=3mm]
+
+\section{Les systèmes d'exploitation mobiles }
+\end{tcolorbox}
+\begin{tcolorbox}[colframe=green!75,rightrule=0.5cm,leftrule=0.5cm,]
+	\subsection{  Définition }
+\end{tcolorbox}
+\textsf{Le système d'exploitation mobile est un système d'exploitation conçu pour fonctionner sur un appareil mobile. Pour le faire, il faut qu'il soit non seulement robuste mais suffisamment flexible pour effectuer des tâches qui dépassent le champ que l'on connaît dans la micro-informatique. Cela revient à la richesse du monde mobile \cite{4}.} \\ 
+
+\textsf{Tout comme un ordinateur dispose d'un système d'exploitation, les téléphones mobiles se composent également d'une plateforme qui contrôle toutes ses fonctionnalités. Ceci est connu comme un système d'exploitation mobile. Généralement connu sous le nom d'OS mobile, il s'agit d'un système d'exploitation qui exploite un appareil mobile (smartphone, tablette,...etc.). Il contrôle toutes les opérations de base du téléphone mobile comme option d'écran tactile, cellulaires, Bluetooth, Wifi, appareil photo, lecteur de musique et d'autres fonctionnalités \cite{5}.}\\% memoire
+
+
+
+\begin{tcolorbox}[colframe=green!75,rightrule=0.5cm,leftrule=0.5cm,]
+\subsection{Les types  des systèmes d'exploitation mobiles } 
+\end{tcolorbox}
+%\begin{figure}[!h]
+%\begin{picture}(2,2)(60,90)
+%\includegraphics[width=3cm]{android.png}	
+%\end{picture}
+%\end{figure}
+\begin{itemize}%[label=\textcolor{blue}{$\rhd$}]
+\item{ \underline{ \textbf{Windows Mobile:}}}
+\textsf{Windows Mobile, est l'OS (système d'exploitation) mobile de Microsoft. C'est une évolution de Windows Pocket PC, ancêtre de Windows CE. Cet OS a réussi au fil des années à s'octroyer une part de marché honorable. Son succès est dû à son affiliation à la famille d'OS Windows, ultra-dominante sur le bureau. Un autre avantage souvent cité est la facilité de développement apportée grâce à l'environnement cliquodrome de Visual Studio qui a su faire venir au développement mobile les développeurs VB (Visual Basic) \cite{6}.} %wikipedia
+\item{ \underline{ \textbf{BlackBerry:}}}
+\textsf{Le système d'exploitation BlackBerry est la plate-forme exclusive mobile développé par RIM (Research In Motion ) exclusivement pour ses Smartphones BlackBerry et les appareils mobiles. RIM utilise ce système d'exploitation pour soutenir des fonctions spécialisées, notamment le trackball de la marque, molette, le trackpad et l'écran tactile \cite{6}}.
+\item{ \underline{ \textbf{Ios:}}}
+\textsf{IOS (Internetwork Operating System), qui était nommé iPhone OS, se trouve non seulement sur les différents générations de iPhone mais également sur d'autres produits de Apple iPad et iPod touch. Il est dérivé de Mac OS X dont il partage les fondations : kernel, les services Unix et Cocoa. Pour Apple, le succès est considérable début 2009, il n'y avait pas moins de 5 millions de téléchargements par jour. Donc, il s'agit du concurrent numéro un pour Android \cite{6}.}
+\item{ \underline{ \textbf{Symbian OS:}}}
+\textsf{Le Symbian OS est développé par la société éponyme qui est une propriété exclusive de Nokia. Bien que cette plateforme soit crée par la participation de plusieurs fabricants tels que Samsung ou Sony Ericsson, ce système est fortement connoté Nokia, ce qui est un frein à son adoption par d'autres constructeurs. Il est récemment passé en open source. C'est un système libre, open source se base sur un noyau Symbian \cite{6}.}
+\item{ \underline{ \textbf{Android:}}}
+\textsf{Android  fut développé par une petite startup qui fut acheté par Google qui poursuit activement son développement. Android distribué sous licence open source, est une variante de Linux. Google a lancé Open Handset Alliance qui regroupe des grands constructeurs et développeurs de logiciels. Ce système est assez nouveau (relativement parlant) auprès des programmeurs. Il a eu dix-huit versions, chacune portant un « nom de code » spécifique \cite{6}.}
+\end{itemize}
+
+\begin{tcolorbox}[colframe=green!75,rightrule=0.5cm,leftrule=0.5cm,]
+\subsection {Caractéristiques:}
+\end{tcolorbox}
+\textsf{ Le tableau \ref{1.1} présente une variété de caractéristiques pour des systèmes d'exploitations mobiles. }
+
+\begin{table}[!htbp]
+	\begin{tcolorbox}[tabularx={||X||Y||Y||}]
+		Platforme &Programation &IDE recommendé(s)\\ \hline 
+		\hline
+		WindowsPhone&VB.Net,C\# & Visual studio.Net\\ 
+		\hline
+		IOS&Objective-C,Swift & X-CODE\\ 
+		\hline
+		Blackberry OS&Java & MDS Studio\\ 
+		\hline
+		Android&Java, code natif C++ Kotlin & Android Studio / Eclipse+plug-in ADT\\ \hline
+		Symbian OS&C++&Performence\\
+		\hline
+\end{tcolorbox}
+	\caption{Les carastiristiques des systems d'exploitation mobiles }
+	\label{1.1}
+\end{table}
+
+\begin{tcolorbox}[colframe=green!75,rightrule=0.5cm,leftrule=0.5cm,]
+\subsection {Statistiques:}
+\end{tcolorbox}
+\textsf{Statistiquement, environ 200 milliards d'applications mobiles ont été téléchargées jusqu'en 2015, alors qu'en 2009, deux milliards
+	seulement l'avaient été. Selon les prévisions, le compteur devrait atteindre 200 milliards de téléchargements en 2017.
+	De 2009 à 2015, le nombre de téléchargements d'applications mobiles gratuites pourrait atteindre 167 milliards. En 2017, ce chiffre
+	pourra atteindre 253 milliards.}\\
+	
+	\textsf{De 2011 à 2015, les applications mobile sont généré un revenu de 45,37 milliards de dollars. En 2017, les revenus devraient atteindre
+	les 76,5 milliards de dollars \cite{4}. }
+
+%\begin{figure}[!h]
+%	\centering
+%	\includegraphics[width=11cm]{Ssc.png}
+%	\caption{Les parts de marché des systèmes d'exploitation mobile pour les années 2011 et 2014 }
+%\end{figure}
+
+
+%Nous avons choisissons le system Android pour cette porjet alors :   
+\begin{tcolorbox}[leftrule=3mm]
+\section{Le système d'exploitation Android}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colframe=green!75,rightrule=0.5cm,leftrule=0.5cm,]
+\subsection{Définition}
+\end{tcolorbox}
+Android est un système d’exploitation Open Source pour Smartphones, PDA (Personal Digital Assistant) et terminaux mobiles conçu par Android, une startup rachetée par Google, et annoncé le 15 novembre 2007. Le terme Android fait référence au nom « androïde » qui désigne un robot construit à l’image d’un être humain.
+Android est un système d’exploitation Open Source pour Smartphones, PDA (Personal 
+\begin{tcolorbox}[colframe=green!75,rightrule=0.5cm,leftrule=0.5cm,]
+	\subsection{Historique}
+\end{tcolorbox}
+\textsf{En 2003 est la naissance d'un startup collée "Android inc", cette derniére a etait acheté par google en 2005 , aprés en 2007 lancer  annonce d'Android  Open Handset Allinace et ils sont extrait le 1er mobile sous Android (T-Mobile G1).}\\
+
+
+\begin{itemize}%[label=\textcolor{blue}{$\rhd$}]
+\item{ \underline{ \textbf{alliance de combinés ouverts(Open Handset Alliance):}}}
+\textsf{C'est le regroupement de +80 entrprise fabricants de matériels, opérateurs mobile, développeurs d'applications (tel que: Google, HTC, Samsung, Intel,...etc.) pour développer  des normes ouvertes pour les appareils de téléphonie mobile.}\\
+\end{itemize}
+
+\textsf{Dans le tableau suivant, nous présentons le développment des version de la palteforme Android.}
+\begin{table}[htbp]
+	\begin{tcolorbox}[tabularx={||X||X||X||X||X||}]
+		Version&Le nom&Distribution&API&Année\\
+		\hline\hline
+		2.3.3&Gingerbread&0.4\%&10&2010\\
+		\hline\hline
+		4.0.3&Ice Cream&0.5\%&15&2011 \\
+		\hline\hline
+		4.0.4&Sandwitsh&0.5\%&15&2012 \\
+		\hline\hline
+		4.1.x&Jelly Bean&1.9\%&16&2012 \\
+		\hline\hline
+		4.4&Kit Kat&12.8\%&19&2013 \\
+		\hline\hline
+		5.0&Lollipop&5.7\%&21&2014 \\
+		\hline\hline
+		5.0&Lollipop&19.4\%&22&2014 \\
+		\hline\hline
+		6.0&Marshmello&28.6\%&23& 2015\\
+		\hline\hline
+		7.0&Nougat&21.1\%&24& 2016\\
+		\hline\hline
+		8.0&Oreo&0.5\%&26& 2017\\
+		\hline\hline
+	\end{tcolorbox}
+	\centering
+	\caption{Historiques des versions Android de 2010 a 2018 }
+	\label{1.2}
+\end{table}
+\newpage
+\begin{tcolorbox}[colframe=green!75,rightrule=0.5cm,leftrule=0.5cm,]
+	\centering
+\subsection{L'architecture de la Plateforme Android}
+\end{tcolorbox}
+
+\textsf{ La plateforme Android est composée de différentes couches . La figure \ref{arch} schématise l'architecture d'Android.}
+\begin{enumerate}%[label=\textcolor{blue}{$\rhd$}]
+			\item{ \underline{ \textbf{Un noyau Linux:}}}
+	permettant des caractéristiques multitâches.
+	\item { \underline{ \textbf{Des bibliothèques}:}}
+	graphiques, multimédias.
+	\item { \underline{ \textbf{Une machine virtuelle}:}}
+   la Davik Virtual Machine Il existe un framework natif permettant le développement en C/C++ NDK (Native Development Kit).
+	\item{ \underline{ \textbf{Un framework applicatif}:}}
+	proposant des fonctionnalités de gestion de fenêtres, de téléphonie, de gestion de contenu...etc.
+	\item { \underline{ \textbf{Des applications}:}}
+	dont un navigateur web, une gestion des contacts, un calendrier...etc.
+\end{enumerate}
+%\begin{figure}[!ph]
+%	\includegraphics[width=15cm,height=13cm]{Diagram_android.png}
+%	\caption{L'architecture de la plateforme Android }
+%	\label{arch}
+%\end{figure}
+\begin{tcolorbox}[colframe=green!75,rightrule=0.5cm,leftrule=0.5cm,]
+	\centering
+\subsection{Le kit de developpemnt de la plateforme Android}
+\end{tcolorbox}
+\begin{enumerate}[label=\textcolor{blue}{$\rhd$}]
+	\item{ \underline{ \textbf{Le SDK(Software Development Kit):}}}
+\textbf{C'est le support qui contient les ressources nécessaires pour developper les applications Android, il est composé de plusieurs éléments afin d’aider les développeurs à créer et à maintenir des applications:}
+\begin{enumerate} [label=\textcolor{blue}{$\rhd\rhd$}]
+	\item Des API (Application Programming Interface).
+	\item Un certain nombre d'exemples illustrant les possibilités du SDK.
+	\item Une  documentation.
+	\item Des outils -parmi lesquels un émulateur.
+\end{enumerate}
+\end{enumerate}
+\begin{tcolorbox}[colframe=green!75,rightrule=0.5cm,leftrule=0.5cm,]
+	\centering
+\subsection{Les logiciels pour développer les applications Android}
+\end{tcolorbox}
+\begin{enumerate}[label=\textcolor{blue}{$\rhd$}]
+	\item { ADT (Android Development Tools):}
+	c'est un plugin pour l'environnement Eclips,il propose des interfaces et des assistants pour la création et le débogage des
+	applications Android.  
+	\item {Android Studio:}
+	un environnement de développement pour développer des applications Android (version stable depuis 8/12/2014).
+\end{enumerate}
+\begin{tcolorbox}[colframe=green!75,rightrule=0.5cm,leftrule=0.5cm,]
+	\centering
+\subsection{Les différents composantes d'une application Android}
+\end{tcolorbox}
+Une application Android se compose de plusieurs éléments. Dans ce qui suit, nous allons
+présenter les plus importants:
+\begin{enumerate}[label=\textcolor{blue}{$\rhd$}]
+	\item{ \underline{ \textbf{Fichier de configuration Android (manifest):}}}
+	\textbf{Le fichier Android Manifest.xml est le descripteur de projet qui permettra au système d'interagir avec l'application. Ce fichier contient la déclaration: .}\\
+	\begin{enumerate}[label=\textcolor{blue}{$\rhd\rhd$}] 
+		\item Des composants applicatifs utilisés.
+		\item Des permissions nécessaires pour utiliser l'application .
+		\item Du niveau minimal du système (chaque évol correspond à un numéro unique). 
+		\item Des composants applicatifs ou matériels utilisés par l'application. 
+		\item Des API externes utilisées par l'application (ex de Google Maps Library). 
+		\item Des exigences réclamées par l'application (taille de l'écran, densité, composants matériels minimaux…etc) .
+	\end{enumerate}
+	\item{ \underline{ \textbf{Les activités:}}}
+	\textbf{Une activité est la composante principale pour une application Android se compose de deux parties principales :}
+		\begin{enumerate}[label=\textcolor{blue}{$\rhd\rhd$}] 
+		\item l'interface graphique :
+		Contient un écran unique avec un interface utilisateur, les layout, les buttons,...etc.
+		\item Lecontext: Le code Java qui décrit les fonctionalités de l'application.
+	\end{enumerate}	
+		\item{ \underline{ \textbf{Les services:}}}
+		Un service est un composant qui s'exécute en tâche de fond pour réaliser des opérations longues ou pour effectuer un appel à une tâche distante (appel REST par exemple). Contrairement à une activité un service ne propose pas de d'interface utilisateur. Par exemple un service peu jouer de la musique pendant que l'on est dans une application différente. 
+			\item{ \underline{ \textbf{Content provider:}}}
+			Un content manager gère les données applicatives. Nous pouvons stocker les données dans n'importe quel système de stockage accessible par notre application (file system, base de données SQLite). A travers le content manager d'autres applications peuvent requêter ou modifier les données (une application peut par exemple accéder a la liste des contacts, si elle a l'autorisation de l'utilisateur). 
+				\item{ \underline{ \textbf{Broadcast receivers:}}}
+				Ce composant permet de traiter les différents signaux émis par le système. Par exemple un broadcast annonce que l'écran a été éteint, que la batterie est faible, qu'une image vient d'être prise,...etc. Même si ces composants n'affichent pas d'interfaces, ils peuvent interagir avec la barre de statut pour avertir l'utilisateur qu'un évènement broadcast intervient. 
+\end{enumerate}
+\newpage
+\begin{tcolorbox}[leftrule=3mm]
+\section{Conclusion}
+\end{tcolorbox}
+
+\quad \textbf{ Dans ce chapitre, nous avons  vu un aperçu général sur les applications mobiles, les types de ces applications, les systems d'exploitation mobiles et leurs différent types. Ensuite, nous avons détaillé la plateforme Android Studio qui nous avons choisis afin de l'utiliser pour développer notre application puisque il est l'environement le plus utilisé ces dernières années.  
+Dans le chapitre qui suit, nous allons présenter la conception de notre application.}
+%% chapitre 2%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagestyle{fancy} 
+\chapter{Conception de l'application mobile}
+\chead{}
+\lhead{\bfseries \chaptername {\,} \thechapter }
+\cfoot{\bfseries \thepage}
+\rhead{} 
+\rhead{\bfseries Conception et UML}
+\begin{tcolorbox}[leftrule=3mm]
+	\section{Introduction}
+\end{tcolorbox}
+\textbf{Dans ce chapitre nous allons voir la conception de notre application en commençant par
+notre objectif ensuite la modélisation de notre application. Pour cela, nous avons utilisé trois diagrammes UML: le diagramme de cas d’utilisation, le diagramme d'activité et le diagramme de classes.}
+
+\begin{tcolorbox}[leftrule=3mm]
+\section{Présentation de notre application}
+\end{tcolorbox}
+\textbf{Notre objectif principale est de créer une application mobile qui aidera les utilisateurs à chercher et a vendre des immobilers en utilisant  Google Map pour pouvoir voir la localisation de ces  immobilers, ainsi d’avoir la possibilité de  contacter les vendeurs par Email ou par  téléphone.}
+\begin{tcolorbox}[leftrule=3mm]
+\section{Le langage de modélisation UML}
+\end{tcolorbox}
+
+  \textbf{UML, c’est l’acronyme anglais pour « Unified Modeling Language ». On le traduit par « Langage de modélisation unifié ».}
+La notation UML est un langage visuel constitué d’un ensemble de schémas, appelés des diagrammes qui donnent chacun une vision différente du projet à traiter. UML nous fournit donc des diagrammes pour représenter le logiciel à développer : son fonctionnement, sa mise en route, les actions susceptibles d’être effectuées par le logiciel..etc \cite{7}.
+\newpage
+\begin{tcolorbox}[colframe=green!75,rightrule=0.5cm,leftrule=0.5cm,]
+\subsection{Objectif d'UML}
+\end{tcolorbox}
+Le languge UML permet de :
+
+\begin{enumerate}
+	\item Structurer un système sans centrer l’analyse uniquement sur les données ou uniquement sur les traitements mais sur les deux a la fois.
+	\item Modéliser les propriétés statiques et dynamiques de l’environnement du système et mettre en correspondance le problème et la solution, en préservant la structure et le comportement du système analyse.
+	\item  Obtenir une modélisation de haut nive indépendante des langages et des Environnements.
+	\item  Documenter un projet.
+\end{enumerate}
+\begin{tcolorbox}[colframe=green!75,rightrule=0.5cm,leftrule=0.5cm,]
+\subsection{Les catégories des diagrammes UML}
+\end{tcolorbox}
+UML définit 9 types de diagramme dans deux catégories de vues, les vues statiques et les vues dynamiques.\cite{8}
+\begin{itemize}%[label=\textcolor{blue}{$\rhd$}]
+\item Les vues statiques
+\begin{itemize}%[label=\textcolor{blue}{$\rhd\rhd$}]
+	\item Le diagramme de cas d’utilisation.
+	\item Le diagramme de classe.
+	\item Le diagramme d’objet.
+	\item Le diagramme de composant.
+	\item Le diagramme de déploiement.
+\end{itemize}
+\item Les vues dynamiques
+\begin{itemize}%[label=\textcolor{blue}{$\rhd\rhd$}]
+	\item Le diagramme de collaboration.
+	\item Le diagramme d’états-transitions.
+	\item Le diagramme d’activités.
+	\item Le diagramme de séquence.
+\end{itemize}
+\end{itemize}
+\newpage
+\begin{tcolorbox}[leftrule=3mm]
+\section{La coneption de notre application}
+\end{tcolorbox}
+
+Nous avons choisi trois diagrammes d’UML pour modéliser notre application:
+\begin{itemize}%[label=\textcolor{blue}{$\rhd$}]
+	\item Diagramme de classes.
+	\item Diagramme de cas d’utilisation.
+	\item Diagramme d'activité.
+\end{itemize}
+\begin{tcolorbox}[colframe=green!75,rightrule=0.5cm,leftrule=0.5cm,]
+ \subsection{Diagramme de classes}
+\end{tcolorbox}
+	Dans la phase d’analyse, ce diagramme représente les entités (des informations) manipulées par les utilisateurs. Dans la phase de conception, il représente la structure objet d’un développement orienté objet \cite{9}.
+%	\begin{figure}[!hp]
+%		\centering
+%		\includegraphics[width=18cm,height=14cm]{diagram/classdyagram.pdf}
+%		\caption{Le diagramme de classes}
+%	\end{figure}
+	\newpage
+\begin{tcolorbox}[colframe=green!75,rightrule=0.5cm,leftrule=0.5cm,]
+ \subsection{Diagramme de cas d’utilisation}
+\end{tcolorbox}
+Il représente les fonctionnalités (cas d’utilisation) nécessaires aux utilisateurs.
+On peut faire un diagramme de cas d’utilisation pour l'application complète ou pour chaque partie de l'application \cite{9}.
+%	\begin{figure}[!hp]
+%	\centering
+%	\includegraphics[width=16cm, height=14cm]{diagram/usecase.pdf}
+%	\caption{Le diagramme des cas d'utilisation}
+%\end{figure}
+\newpage
+\begin{tcolorbox}[colframe=green!75,rightrule=0.5cm,leftrule=0.5cm,]
+ \subsection{Diagramme d'activité}
+\end{tcolorbox}
+Un diagramme d'activité permet de modéliser un processus interactif, global ou partiel pour un système donné (logiciel, système d'information). Il est recommandable pour exprimer une dimension temporelle sur une partie du modèle, à partir de diagrammes de classes ou de cas d'utilisation.\\
+
+Le diagramme d'activité est une représentation proche de l'organigramme; la description d'un cas d'utilisation par un diagramme d'activité correspond à sa traduction algorithmique. Une activité est l'exécution d'une partie du cas d'utilisation, elle est représentée par un rectangle aux bords arrondis.\\
+
+Le diagramme d'activité est sémantiquement proche des diagrammes de communication (appelés diagramme de collaboration en UML 1), ou d'état-transitions, ces derniers offrent une vision microscopique des objets du système \cite{10}.\\
+  
+ Le diagramme d'activité présente une vision macroscopique et temporelle du système modélisé :
+ \begin{itemize}%[label=\textcolor{blue}{$\rhd$}]
+\item Action.
+\item Action structurée.
+\item Historique.
+\item Fusion.
+\item Décision.
+\newpage
+Dans notre travail, nous avons deux diagrammes d'activité:
+ \begin{itemize}%[label=\textcolor{blue}{$\rhd\rhd$}]
+	\item Diagramme d'activité d'authentification
+%		\begin{figure}[!hp]
+%		\centering
+%		\includegraphics[width=16cm, height=21cm]{diagram/activityauthpdf.pdf}
+%		\caption{Diagramme d'activité-d'authentification}
+%	\end{figure}
+\newpage
+
+ \item Diagramme d'activité de gestion du système
+
+  
+%		\begin{figure}[!hp]
+%		\centering
+%		\includegraphics[width=16cm, height=22cm]{diagram/activitypostpdf.pdf}
+%		\caption{Diagramme d'activité-gestion du système }
+%	\end{figure}
+\end{itemize} 
+ \end{itemize} 
+
+\newpage
+\begin{tcolorbox}[leftrule=3mm]
+\section{Conclusion}
+\end{tcolorbox}
+\textbf{Dans ce chapitre, nous avons  présenté la conception de notre application mobile. Nous avons détaillé sa conception  à travers  le  diagramme de cas d’utilisation, le diagramme d'activité et le diagramme de classes ou nous avons utilisé UML afin que la phase d'implémentation  soit plus simple et plus facile.} 
+
+%% chapitre 3%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagestyle{fancy} 
+\chapter{Implémentation}
+\chead{}
+\lhead{\bfseries \chaptername {\,} \thechapter }
+\cfoot{\bfseries \thepage}
+\rhead{} 
+\rhead{\bfseries Implémentation}
+\begin{tcolorbox}[leftrule=3mm]
+	\section{Introduction}
+\end{tcolorbox}
+Pour pouvoir mener à bien un projet informatique, il est nécessaire de choisir des technologies permettant de simplifier sa réalisation. Pour cela, après avoir compléter l'étude conceptuelle dans le chapitre précédent, nous allons aborder la partie implémentation dans ce qui suit. Nous commençons par présenter l’environnement logiciel, nous avons à disposition beaucoup d’outils d'implémentation. Ensuite, on va présenter les différents étapes de la  fonctionalité de notre application.
+\begin{tcolorbox}[leftrule=3mm]
+	\section{Environnement et outils de développement} 
+\end{tcolorbox}
+%%%%%%%%%%%%%%%%%
+\begin{tcolorbox}[colframe=green!75,rightrule=0.5cm,leftrule=0.5cm,]
+	\centering
+	\subsection{Outils logiciel}
+\end{tcolorbox}
+%%%%%%%%%%%%%%%%%
+	\begin{itemize}%[label=\textcolor{blue}{$\rhd$}]
+		\begin{minipage}{0.5\textwidth}
+	\item{ \underline{ \textbf{Android Studio:}}}	
+La plateforme Android est un environnement basée sur un kernel linux entièrement gratuit, sous licence open source. Elle est composée d'un système d'exploitation, de librairies, et d'un ensemble d'applications. Android permet d'utliser le langage Java pour les fonctionalités,  XML pour l'interface, Groovy pour le Gridle,...etc.
+		\end{minipage}
+			 ~	
+%		\begin{minipage}{0.5\textwidth}
+%		\includegraphics[width=7cm,height=5cm]{photo/androidstudio.png}
+%		\end{minipage}
+
+
+\begin{minipage}{0.5\textwidth}
+\item{ \underline{ \textbf{PHPMyadmin et MySQL:}}}
+         	phpMyAdmin est un outil logiciel gratuit écrit en PHP, destiné à gérer l'administration de MySQL sur le Web.  Les opérations fréquemment utilisées (gestion de bases de données, de tables, de colonnes, de relations, d'index, d'utilisateurs, d'autorisations,...etc.).
+         \end{minipage}
+          ~      
+%\begin{minipage}{0.5\textwidth}
+%\includegraphics[width=7cm,height=4.5cm]{photo/mysql-phpmyadmin}
+%\end{minipage}
+
+                 
+\begin{minipage}{0.5\textwidth}
+\item{ \underline{ \textbf{PHP Storm:}}}
+Est un  environnement de développement pour développer les frameworks comme Laravel, et les langages de web PHP, java Script, HTML,...etc.
+\end{minipage}
+~
+%\begin{minipage}{0.5\textwidth}
+%	%\includegraphics[width=7cm,height=4.5cm]{photo/phpStorm}
+%	{\hspace*{1.5cm}}
+%		\includegraphics[width=5cm,height=4.5cm]{photo/aaaa/phpstorm.png}
+%\end{minipage}
+
+\begin{minipage}{0.5\textwidth}
+		\item{ \underline{ \textbf{GéneyMotion:}}}
+Est un logiciel qui comprend des machines virtuelles Android pour tester des applications. 
+\end{minipage}
+~
+%\begin{minipage}{0.5\textwidth}
+%	%\includegraphics[width=7cm,height=4.5cm]{photo/geny}
+%		{\hspace*{1.5cm}}
+%	\includegraphics[width=5cm,height=4.5cm]{photo/aaaa/genymotion.png}
+%\end{minipage}
+
+
+\begin{minipage}{0.5\textwidth}
+\item{ \underline{ \textbf{Postman:}}}
+Est un logiciel qui permet d'exécuter des requêtes, tester et déboguer, créer des tests automatisés et simuler, documenter et surveiller une API, de partager des collections, définir des autorisations et gérer les participations dans plusieurs éspaces de travail.
+\end{minipage}
+~
+%\begin{minipage}{0.5\textwidth}
+%	%\includegraphics[width=7cm,height=5cm]{photo/postman}
+%		{\hspace*{1.5cm}}
+%	\includegraphics[width=5cm,height=4.5cm]{photo/aaaa/postman.png}
+%\end{minipage}
+%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%
+\begin{minipage}{0.5\textwidth}
+	\item{ \underline{ \textbf{Photo Shop:}}}
+Est un logiciel pour manipuler, créer, modifier du texte et des images. Il est considéré le plus populaire pour éditer des graphiques et de modifier les photographies.
+\end{minipage}
+~
+%\begin{minipage}{0.5\textwidth}
+%%\includegraphics[width=7cm,height=5cm]{photo/pho}
+%	{\hspace*{1.5cm}}
+%\includegraphics[width=5cm,height=4.5cm]{photo/aaaa/photoshop.png}
+%\end{minipage}
+\end{itemize}
+%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%
+\begin{tcolorbox}[colframe=green!75,rightrule=0.5cm,leftrule=0.5cm,]
+	\centering
+	\subsection{Les langages et framework utilisés}
+\end{tcolorbox}
+
+%%%%%%%%%%%%%%%%%
+	\subsubsection*{Java}
+\begin{minipage}{0.5\textwidth}
+Est un langage de programmation orienté objet, il est utilsé par l'environement Android pour définir les fonctionalité de l'application. 
+\end{minipage}
+~
+%\begin{minipage}{0.5\textwidth}
+%%\includegraphics[width=7cm,height=5cm]{photo/java}
+%	{\hspace*{1.5cm}}
+%\includegraphics[width=5cm,height=4.5cm]{photo/aaaa/Java.png}
+%\end{minipage}
+%%%%%%%%%%%%%
+	\subsubsection*{XML}
+\begin{minipage}{0.5\textwidth}
+Extensible Markup Language (XML) est un  langage de description permettant de décrire et structurer un ensemble de données. Dans l'Andriod, ce langage a été utilisé pour définir l'interface graphique de l'application.
+\end{minipage}
+~
+%\begin{minipage}{0.5\textwidth}
+%\includegraphics[width=7cm,height=5cm]{photo/axml}
+%\end{minipage}
+%%%%%%%%%%%%%
+	\subsubsection*{Laravel}
+\begin{minipage}{0.5\textwidth}
+Laravel est un framework web open-source écrit en PHP, il utilise le principe (MVC) Modèle-Vue-Contrôleur et entièrement est développé en Programmation Orientée Objet (POO).
+\end{minipage}
+~
+%\begin{minipage}{0.5\textwidth}
+%\includegraphics[width=7cm,height=5cm]{photo/Laravel}
+%\end{minipage}
+%%%%%%%%%%%%%
+\newpage
+\begin{tcolorbox}[colframe=green!75,rightrule=0.5cm,leftrule=0.5cm,]
+	\centering
+	\subsection{Les bibliothèques utilisées}
+\end{tcolorbox}
+%%%%%%%%%%%%%%%%%
+\subsubsection*{Retrofit2}
+\begin{minipage}{0.5\textwidth}
+Est une bibliothèque Android permet de faire une comunication entre le serveur Web et l'application, elle fait un échange de langage JSON a une classe Java. 
+\end{minipage}
+~
+%\begin{minipage}{0.5\textwidth}
+%\includegraphics[width=7cm,height=5cm]{photo/rtf}
+%\end{minipage}
+%%%%%%%%%%%%%
+	\subsubsection*{Picasso}
+\begin{minipage}{0.5\textwidth}
+	
+C'est une bibliothèque Android permet de télécharger les photos à partire du server au niveau d'application, elle peut aussi les prendre depuis le stockage et les publier dans l'appliaction. 
+\end{minipage}
+~
+%\begin{minipage}{0.5\textwidth}
+%%\includegraphics[width=7cm,height=5cm]{photo/pic}
+%
+%\includegraphics[width=8cm,height=4.5cm]{photo/aaaa/picasso.png}
+%\end{minipage}
+%%%%%%%%%%%%%
+	\subsubsection*{Google maps API}
+\begin{minipage}{0.5\textwidth}
+Est un service gratuit est crée par Google pour l'Android et permet l'utilisation d'une carte graphique en ligne. 
+\end{minipage}
+~
+%\begin{minipage}{0.5\textwidth}
+%\includegraphics[width=7cm,height=5cm]{photo/googlMap}
+%\end{minipage}
+%%%%%%%%%%%%%
+\newpage
+\begin{tcolorbox}[leftrule=3mm]
+	\section{Environnements et outils de rédaction} 
+\end{tcolorbox}
+
+%%%%%%%%%%%%%
+%\subsection{languge utilisé}
+%%%%%%%%%%%%%	
+\begin{minipage}{0.5\textwidth}
+\subsubsection*{\LaTeX}
+\textsf{LaTeX est un outil de description donnant à l'auteur les moyens d'obtenir des documents mis en page de façon professionnelle sans avoir à se soucier de leur forme.} 
+\end{minipage}
+~
+%\begin{minipage}{0.5\textwidth}
+%
+%\includegraphics[width=7cm,height=5cm]{photo/latex}
+%\end{minipage}
+%%%%%%%%%%%%%
+%\subsection{outile de  utilisé}
+%%%%%%%%%%%%%
+\subsubsection*{Tex Studio}
+\begin{minipage}{0.5\textwidth}
+Est un éditeur de texte et intègre un environnement de développement simplifié au maximum pour rendre le codage en LaTeX aussi aisée que possible. 
+\end{minipage}
+~
+%\begin{minipage}{0.5\textwidth}
+%
+%\includegraphics[width=8cm,height=7cm]{photo/texs}
+%\end{minipage}
+
+\newpage
+\begin{tcolorbox}[leftrule=3mm]
+	\section{Description de  l'application}
+\end{tcolorbox}
+
+Comme mentionné ci-dessus, cette application est spécifique à l'immobilier, car elle fournit à l'utilisateur son propre espace à travers lequel il peut l'utiliser dont le but de ce qu'il doit vendre ou louer. D'une autre côté, il peut chercher une propriété selon les conditions qu'il choisis.\\
+\quad Dans cette section, nous allons expliquer les fonctionalités de notre application à travers une description générale. Dans ce qui suit nous présenterons les différentes interfaces de l’application en citant les détailles de chaque imprimé écran.
+\subsection*{ Logo}
+%\begin{figure}[h]
+%	\centering
+%	\begin{subfigure}[h]{5cm}
+%	\includegraphics[width=5cm]{img/icon/icon.png}
+%\caption{logo}
+%	\end{subfigure}
+%~
+%	\begin{subfigure}[h]{5cm}
+%	\includegraphics[width=5cm]{img/icon/1.png}
+%	\caption{logo}
+%\end{subfigure}
+%\caption{Le logo de l'application}
+%	\end{figure}
+
+\newpage
+%\subsection{ L'utilisation} 
+\begin{enumerate}[label=\textcolor{blue}{$\rhd$}]
+	\item \underline{ \textbf{Ecran de démarrage:}}
+Avec le lancement de l'application, l'écran de démarrage (splash screen) s'affiche comme il est illustré dans la Figure\ref{Splash}.
+%	\begin{figure}[h]
+%		\centering
+%		\includegraphics[width=4.25cm]{img/start/loader.png}
+%		\caption{Splash screen }
+%		\label{Splash}
+%	\end{figure}
+
+
+	\item \underline{\textbf{Authentification (Login):}}
+	Cette activité permet à l'utilisateur de se connecter à l'application (voir la figure \ref{login}) en entrant son adresse Email et son mot de passe.
+%	\begin{figure}[h]
+%		\centering
+%		\includegraphics[width=4.25cm]{img/new/login.png}
+%		\caption{Authentification}
+%		\label{login}
+%	\end{figure}
+	
+	\newpage
+		\item \underline{\textbf{Inscription:}}
+		  Après s'être assuré qu'il y a une connexion à Internet, nous trouvons que nous avons deux possibilités: (i) la première qui vérifie si l'utilisateur a déja avoir un compte  pour l'entrée, elle nous a donné l'accés directement à la page d'accueil (Figure \ref{acceuil}) et (ii) s'il s'est pas le cas, nous amène à la page d'insription (Figure \ref{inscription}).
+%		\begin{figure}[h]
+%		\centering
+%		\includegraphics[width=4.5cm]{img/new/enrg}
+%		\caption{Inscription}
+%			\label{inscription}
+%	\end{figure}
+	\item \underline{\textbf{L'interface d'accueil:}}
+	Dès que l'application s'ouvre, il nous amène à une activité qui contient les publications (voir la figure \ref{acc}), qui possède une liste des differents types d'immobiliers et l'ensemble des publications et une menu latéral (voir la figure \ref{menu}) qui comprend les different manipulations des publications et de compte. 
+%	\begin{figure}[h]
+%		\centering
+%	\begin{subfigure}[h]{4.5cm}
+%		\includegraphics[width=4.5cm]{img/new/main.png}
+%		\caption{L'interface d'accueil}
+%		\label{acc}
+%	\end{subfigure}
+	~
+%	\begin{subfigure}[h]{4.5cm}
+%		\includegraphics[width=4.5cm]{img/new/mainn.png}
+%		\caption{Menu latéral}
+%		\label{menu}
+%	\end{subfigure}
+%\caption{Acceuil}
+%\label{acceuil}
+%	\end{figure}
+	\end{enumerate}
+	\newpage
+\begin{tcolorbox}[leftrule=3mm]
+	\section{Les activités de l'application}
+\end{tcolorbox}
+\begin{tcolorbox}[colframe=green!75,rightrule=0.5cm,leftrule=0.5cm,]
+	\centering
+\subsection{Ajouter une publication }
+\end{tcolorbox}
+
+La Figure \ref{Ajouter} illustre l'ajout d'une publication. Cette partie permet a l'utilisateur de:
+\begin{enumerate}
+
+\item publier ses immobiliers en  choisissant de vendre ou de louer;
+\item Spécifier le type et l'image de la propriété;
+\item Ajouter la description et le prix;
+\item Sélectioner la position de l'immobilier dans le Map.
+
+\end{enumerate}   
+%	\begin{figure}[h]
+%	\centering
+%	\begin{subfigure}[h]{4.5cm}
+%		\includegraphics[width=4.5cm]{img/new/addpost/ad.png}
+%	\end{subfigure}
+%	~
+%	\begin{subfigure}[h]{4.5cm}
+%		\includegraphics[width=4.5cm]{img/new/addpost/add.png}
+%
+%	\end{subfigure}
+%	~
+%\begin{subfigure}[h]{4.5cm}
+%	\includegraphics[width=4.5cm]{img/new/addpost/addd.png}
+%\end{subfigure}
+%	\caption{Ajouter une publication}
+%	\label{Ajouter}
+%\end{figure}
+\newpage
+\begin{tcolorbox}[colframe=green!75,rightrule=0.5cm,leftrule=0.5cm,]
+	\centering
+\subsection{Modifier une publication existante}
+\end{tcolorbox}
+
+La modification d'une publication existe déja est illustrée dans la Figure \ref{Modifier}, Cette activité permet a l'utilisateur de modifier ses publications que se soit l'image ou le prix ou l'un des proprietés de la publication.   
+\newpage
+%\begin{figure}[h]
+%	\centering
+%	\begin{subfigure}[h]{4.5cm}
+%		\includegraphics[width=4.5cm]{img/new/editpost/ad.png}
+%	\end{subfigure}
+%	~
+%	\begin{subfigure}[h]{4.5cm}
+%		\includegraphics[width=4.5cm]{img/new/editpost/add.png}
+%
+%	\end{subfigure}
+%	~
+%	\begin{subfigure}[h]{4.5cm}
+%		\includegraphics[width=4.5cm]{img/new/editpost/addd.png}
+%	\end{subfigure}
+%	\caption{ Modifier une publication existante}
+%	\label{Modifier}
+%\end{figure}
+\begin{tcolorbox}[colframe=green!75,rightrule=0.5cm,leftrule=0.5cm,]
+	\centering
+\subsection{L'accées a une publication }
+\end{tcolorbox}
+
+Lorsque l'utilisateur appuie sur l'une des publications peut accéder au profil du propriétaire de la publication (Figure \ref{accees}) et il peut voir la description et le prix de la propriété, l'emplacement et la trace de la route spécifique dans la carte qui facilite également la tache a l'utilisateur où il peut déterminer la route et la durée de déplacement au immobilier.
+%\begin{figure}[!h]
+%	\centering
+%	\begin{subfigure}[h]{4.5cm}
+%		\includegraphics[width=4.5cm]{img/new/post/p.png}
+%\end{subfigure}
+%~
+%	\begin{subfigure}[h]{4.5cm}
+%	\includegraphics[width=4.5cm]{img/new/post/pp.png}
+%\end{subfigure}
+%~
+%	\begin{subfigure}[h]{4.5cm}
+%	\includegraphics[width=4.5cm]{img/new/post/pppp.png}
+%\end{subfigure}
+%\caption{L'accées a une publication}
+%\label{accees}
+%\end{figure}
+\newpage
+\begin{tcolorbox}[colframe=green!75,rightrule=0.5cm,leftrule=0.5cm,]
+	\centering
+\subsection{Modifier les informations d'utilisateur }
+\end{tcolorbox}
+
+L'utilisateur peut aussi améliorer tous ses informations, comme il est illustré dans la figure \ref{Modification}.  
+%\begin{figure}[!h]
+%	\centering
+%		\includegraphics[width=4.5cm]{img/new/changinfo.png}
+%	\caption{Modification des informations}
+%	\label{Modification}
+%\end{figure}
+
+\begin{tcolorbox}[colframe=green!75,rightrule=0.5cm,leftrule=0.5cm,]
+	\centering
+\subsection{Supprimer un compte }
+\end{tcolorbox}
+L'option "Tools" contient plusieurs outils, l'un de ces outils est la suppression d'un compte existe déja, comme il est présenté dans la figure \ref{suppression}.    
+%\begin{figure}[h]
+%	\centering
+%	\includegraphics[width=4.5cm]{img/new/suppc.png}
+%	\caption{Suppression d'un compte}
+%	\label{suppression}
+%\end{figure}
+\newpage
+\begin{tcolorbox}[leftrule=3mm]
+\section{Conclusion}
+\end{tcolorbox}
+Dans ce chapitre, nous avons présenté d'une part les outils de développement sous
+Android, et d'une autre part, nous avons présenté notre application en expliquant tous ses fonctionnalités a travers des exemples.
+%tools for using it after %%%%%%%%
+
+
+%% conclusion generale%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter*{Conclusion générale}
+\addcontentsline{toc}{chapter}{Conclusion générale}
+\lhead{}
+\cfoot{\bfseries \thepage}
+\rhead{Conclusion générale}
+\markboth{droite}{Conclusion générale}
+
+L'objectif principal de notre travail était de développer une application mobile qui permet de simplifier l'achat et le vente des immobiliers en Algerie, pour cela nous avons commencé par présenter les applications mobiles et les systèmes d'exploitation mobiles, leurs classifications et leurs développements. 
+
+Dans ce contexte, nous avons développé et réalisé une application a travers les differents diagrammes de conception. A l'aide de cette application, l'utilisatuer peut:
+
+
+\begin{enumerate}
+	\item Chercher facilement un immobilier afin de l'acheter selon le prix, la position, ...etc. 
+	\item Publier  tous les informations d'un immobilier pour simplifier l'opération de vendre ou de louer.
+\end{enumerate}
+
+Pour la conception ous avons utilisé le langage de modélisation UML,  en basant sur cette méthode nous avons construit ce projet.
+
+Pour la réalisation  nous avons utilisé l'environemment Android Studio qui à son tour permet d'utiliser de nombreux langages, notamment Java pour  l'implémentation de code  et XML pour l'interface. Nous avons aussi utilisé le framework Laravel pour réaliser le serveur local et pour la base de donnée nous avons  utilisé le langage Mysql.
+
+La principale difficulté de ce projet a été de mettre en place un serveur local et de le configurer pour pouvoir accéder à la base de données à partir de l'application.
+
+Ce projet nous a permis :
+\begin{itemize}
+\item De mettre en oeuvre les connaissances que nous avons acquises en menant le développement d'un produit logiciel de la conception à l'implémentation. Nous avons pu faire le lien entre tous les modules que nous avons étudié : génie logiciel, réseaux, base de données et algorithmique.
+\item De maitriser bien les langages de programmation JAVA, XML, Mysql et l'outil LaTeX avec l'éditeur de texte TeXstudio. 
+\end{itemize}
+
+Pour cela, il est intéressant d'améliorer l'application pour obtenir une nouvelle version contient les nouvelles fonctionnalités suivantes :  
+\begin{itemize}
+\item Créer une site  web accorder avec cette application. 
+\item Améloirer le design et le rendre convivial.
+\item Developpe-le pour utiliser les notification. 
+\end{itemize}
+ 
+
+
+%%References%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+\pagestyle{fancy}
+\addcontentsline{toc}{chapter}{Bibliographie}
+\begin{thebibliography}{99}
+\lhead{}
+\cfoot{\bfseries \thepage}
+\rhead{Bibliographie}
+
+
+\bibitem[1]{1}
+H. Altaama,
+Application Mobile Guide,
+Mémoire de Master en Informatique, 
+Université Abou Bakr Belkaid de Tlemcen, 
+2016.
+\bibitem[2]{2}
+\url{http://generationmobiles.net/2014/11/les-differents-types-dapps-mobiles/}, [consulté le 14/03/2018].
+\bibitem[3]{3}
+\url {https://fr.yeeply.com/blog/application-native-hybride-ou-web/}, [consulté le 24/03/2018].
+\bibitem[4]{4}
+M. Tekeya et S. Hadj ammar,
+CONCEPTION ET DEVELOPPEMENT D’UNE APPLICATION MOBILE SOUS LA PLATEFORME ANDROID
+Mémoire de Licence en Technologie Réseaux Informatiques, 
+Institut Supérieur d'Informatique de Mahdia, 
+2013.
+\bibitem[5]{5}
+\url {https://fr.wikipedia.org/wiki/Syst\%C3\%A8me_d\%27exploitation_mobile}, [consulté le 04/04/2018].
+
+\bibitem[6]{6}
+F. Ouassini et Z. Bentoumi, 
+Conception et réalisation d’une application mobile web,
+Mémoire de Licence,
+Université Abou Bakr Belkaid de Tlemcen,
+2015.
+\bibitem[7]{7}
+\url{https://openclassrooms.com/courses/debutez-l-analyse-logicielle-avec-uml/uml-c-est-quoi}, [consulté le 01/05/2018].
+\bibitem[8]{8}
+\url{https://openclassrooms.com/courses/debutez-l-analyse-logicielle-avec-uml/les-differents-types-de-diagrammes}, [consulté le 03/05/2018].
+\bibitem[9]{9}
+\url{https://fr.wikiversity.org/wiki/Mod_C3_A9lisation_UML/Les_diff_C3_A9rents_types_de_diagramme}, [consulté le 05/05/2018].
+\bibitem[10]{10}
+\url{https://fr.wikipedia.org/wiki/Diagramme_d_27activit_C3_A9}, [consulté le 05/05/2018].
+\end{thebibliography}
+\end{document} 
+
+
+
+
+
