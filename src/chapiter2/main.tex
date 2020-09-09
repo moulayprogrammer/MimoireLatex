@@ -1,29 +1,376 @@
-%\pagestyle{fancy}
-%\chapter{Active contours : GVF Snakes}\label{ch:active-contours-:-gvf-snakes}
-%\chead{}
-%\lhead{\bfseries \chaptername {\,} \thechapter }
-%\cfoot{\bfseries \thepage}
-%\rhead{}
-%\rhead{\bfseries Active contours : GVF Snakes}
-%
-%\section{Introduction}\label{sec:introduction-ch2}
-%        ................................
-%
-%\section{Classic Active contours}\label{sec:classic-active-contours}
-%        ................................
-%
-%
-%\section{Energy Minimization}\label{sec:energy-minimization}
-%        ................................
-%
-%
-%\section{Problems of the classic active contours}\label{sec:problems-of-the-classic-active-contours}
-%        ................................
-%
-%
-%\section{GVF Snakes}\label{sec:gvf-snakes}
-%        ................................
-%
-%
-%\section{Conclusion}\label{sec:conclusion-ch2}
-%        ................................
+\pagestyle{fancy}
+\chapter{Active contours : GVF Snakes}\label{ch:active-contours-:-gvf-snakes}
+\chead{}
+\lhead{\bfseries \chaptername {\,} \thechapter }
+\cfoot{\bfseries \thepage}
+\rhead{}
+\rhead{\bfseries Active contours : GVF Snakes}
+
+\section{Introduction}\label{sec:introduction-ch2}
+\hspace{1cm}Active contours take their origin from the elastic models but the
+community grants itself to attribute them to theKass, Witkin and
+Terzopoulosteam, [1] who introduce snakes or minimizing curves. Snakes take
+their name from their ability to deform like snakes. Since the publication of this
+team, deformable models have become a very important subject for the image
+processing community.\\
+\hspace{1cm}The active contour model is a sequential technique for image segmentation.
+Given an approximation of the boundary of an object in an image, an active
+contour model is used to find the actual boundary by deforming the initial
+boundary to lock onto features of interest within this image. There are many
+fields of use in both 2D and 3D, such as image segmentation, pattern
+recognition, scene tracking, and simulation. In this chapter, we will first see
+some definitions that will allow us to understand the principle of active
+contours.
+
+\section{Classic Active contours}\label{sec:classic-active-contours}
+
+\hspace{1cm}An active contour (snake) is formed by a list of moving and distributed points
+on a two-dimensional curve.Which are typically initialized outside the object of
+interest, the curve move under the influence of several forces that will pull it or
+push it towards the object, the evolution of curve is done through an iterative
+process that deforms the curve at each iteration up to its final position see figure \ref{fig:mesh2}.
+
+\hspace{1cm} Snake introduced by Kass, Witkin and Terzopoulos[1], the idea started from
+making the initial closed curve converge to the desired object by minimizing
+the energy functional.The name “snake” is the reason for the appearance of
+the parametric curve, which changes during the iterative process.\\
+\begin{figure}[h]
+        \centering
+        \includegraphics[width=3cm, height=6cm]{figurs/logouniv.jpeg}
+        \caption{The active contour (snake)}
+        \label{fig:mesh2}
+
+\end{figure}\\
+Snake is designed to vary its shape and position while tending to search
+through the minimal energy state. Snake propagates through the domain of the
+image to reduce the energy function and intends to dynamically move to the
+local minimum. Snake is expressed by Eq.(1). The parametric form of the curve
+is exploited in the Snake model that has more advantages than utilizing implicit
+and explicit curve forms\\
+Equation 001!!\\
+Where x and y are the coordinates of the two-dimensional curve, v is the spline parameter
+in the range 0–1, s is linear parameter \in [ 0\,,1]\, and t is time parameter \in [ 0\,,\propto]\,
+
+\hspace{1cm}The forces in the snake include external forces as well as image forces that help in feature identification.When
+the snake model moves around a closed curve, it moves with the influence of both internal and external energy
+to keep the total energy minimum[2].
+minimum[2].
+the energy is usually formed by internal forces and external forces are described in Eq(2) :\\
+Equation 002!!\\
+$E_{internal}$ tends to elastically hold the curve together (elasticity forces) and to keep it  from bending too much (bending forces) and the external energy  pushes the snake line to the actual contours of the object in the image [3].
+
+\subsection{Energy}\label{subsec:energy}
+As we have already seen a snake is a parametric curve that move into a position where its energy is minimized. Kass, Witkin and Terzopoulos[1] have introduced the following energy functional for calculating
+the snake energy:\\
+Equation 003!!
+\\
+The snake energy consist of three terms:\\
+The first term $E_{internal}$ denotes the internal energy of the snake while the second term $E_{img}$ represents the image
+forces, the last term $E_{con}$ gives rise to external constraint forces.
+The sum of the image forces $E_{img}$ and the external constraint forces $E_{con}$ is also simply known as
+the external snake forces denoted by $E_{external}$.
+\subsubsection{Internal energy}
+Internal energy it does not depend on the image or the shape, it depends only
+on the points of the contour, so it is related to the Snake. The internal energy
+of the snake is the component of the behavior function that describe the
+physical properties of our contour like smoothness or continuity and curvature
+It usually consists of two Terms:\\
+Equation 004!!\\
+The first-order term $ \| V_s (s) \|^{2}$ measures the continuity (elasticity) or
+smoothness which it's a function of the first derivative of our contour and it is
+controlled by the coefficients $\alpha$, The elasticity force has the effect of making
+the curve shrink even when it is not deformed. Thus, the shrinking effect allows
+us to place the snake around the object we wish to find the contour of, and
+then be fairly certain that it will come in contact with the image energy of the
+object. However, it might be necessary to adjust the parameter $\alph$ to prevent
+the elasticity force from overcoming the image energy completely, as this
+would result in the snake disregarding the image energy and shrinking into a
+single point [4].\\
+The second-order term represents the curvature force, which is the second
+derivative of the parametric curve that used to measure how much the snake
+curves at a point. Usually, the curvature is given by the second derivative of the
+curve with regards to the arc length which controlled by the parameter $\beta$[4]. It helps to prevent the contour from
+containing isolated points that would not be consistent with the shape.
+\subsubsection{Image energy}
+\hspace{1cm}Image energy take into account the characteristics of processed images ,which
+pulls the active contour towards features in the image and can be defined as
+suggested by Kass et al [1] using the image intensity gradient:\\
+Equation 005!!\\
+Where I is the image function and $\nabla$ Laplacian operator.
+The snake will try to position itself in areas of low energy, often the snake
+should be attracted toward different image features as edges in the image.
+Because, the image has noise that obstructs the snake moving, the image can
+be smoothing to reduce the noise, the image can be convolved with a Gaussian
+kernel before computing the gradients that increase the capture range of the snake, this gives the following
+image energy term:\\
+Equation 006!!\\
+Where $G_\sigma(x, y)$ is a two dimensional Gaussian with standard deviation $\sigma$. When
+strong edges in the image are blurred by the Gaussian the corresponding
+gradient is also smoothed which results in the snake coming under the
+influence of the gradient forces from a greater distance, hereby increasing the
+capture range of the snake.The negative sign reverses the energy so that sharp
+edges are mapped to areas of low energy[4].
+\subsubsection{Context energy}
+\hspace{1cm}Context energy expresses some additional constraints that may be imposed by
+the user according to the Snake he wants to obtain, we can example impose a
+minimum or maximum distance between two consecutive points of the active
+contour.\\
+Among the energies of context one finds, the energy of balloon which
+introduced by L. D. Cohen and I. Cohen [5],This model is based on an additional
+inflation force applied to give stable results. A snake, which is not close the
+contours is not attracted by them. The curve behaves like a balloon, which is
+inflated. The balloon force is calculated as follow:\\
+Equation 007!!\\
+Where n(s) is the normal unitary vector to the curve at point u(s) and $k_1$ is the
+amplitude of this force. The sign of $k_1$ or the orientation of the curve has the
+effect of deflation or the inflation of the snake[5](when $k_1$ is positive it will
+concentrate the snake, while a negative coefficient will make the snake
+expansive).
+\section{Energy Minimization}\label{sec:energy-minimization}
+
+Several methods have been proposed to solve the problem of minimization of
+the functional energies $E_{snake}$ there are three main method:
+
+\subsection{The variation approach}\label{subsec:the-variation-approach}
+\hspace{1cm}Using only the first two energy types of equation Eq (3) which are
+control (smoothing + stiffness) and energy of the gradient, we end up with
+theformulation of active contours introduced by Kass, Witkin and
+Terzopoulos[1].\\
+Minimizing the energy functional of equation (3) gives rise of the following two
+independent Euler equations:\\
+Equation 008!!\\
+To solve numerically, the Euler equations with $f_x =\frac{\sigma E_{ext}}{\sigma_{x_i}}$ and $f_y =\frac{\sigma E_{ext}}{\sigma_{y_i}}$
+are discretized, yielding :\\
+Equation 009!!\\
+The above Euler equations can be written in matrix forms, one for x and
+another for y, yields:\\
+Equation 0010!!\\
+Now it’s can be solve for position vectors iteratively :\\
+Equation 0011!!\\
+As characteristics of the formulation, if a contour is not subjected to any
+external forces, it will vanishto a line or a point, and furthermore, if it is not
+placedclose to image boundaries, it will not get attracted.\\
+\hspace{1cm}In summary, although the computational requirementsof the variational
+approach is linear, dynamic programming has important features, making the
+new formulation attractive [6].
+\subsection{Discrete dynamic programming}\label{subsec:discrete-dynamic-programming}
+\hspace{1cm}Dynamic programming is a classic method of solving optimization problems.Its
+application to active contours can be an interesting alternative to variational
+calculation.\\
+By Discretizing the integral in The equation 3 can be written as follow[6] :\\
+Equation 0012!!\\
+In order to use dynamic programming, the minimization of Eq (12 ) can be
+viewed as a discrete multistage decision process Starting from the initial point
+on the contour, we can treat the minimization problem as one that at each of a
+finite set of stages ($i_{0},i_{1},..., i_{n-1}$ ) It is possible to express $E_{tot}$ :\\
+Equation 0013!!\\
+But this come back to a problem of optimization of a numerical function a
+several variables. The variables will be the positions of the different points of
+the snake where each variable is allowed to only take on m possible values. The
+standard formulation in recurrent form of programming dynamic can be
+written:\\
+Equation 0014!!\\
+Each iteration gives an optimal contour. The convergence of the energy is
+guaranteed but it’s has a high complexity (The time complexity for the
+algorithm increases to O( $nm_3$ ),(where n is the length of the contour and mis
+the number of possible choices at each stage).
+\subsection{Greedy Method}\label{subsec:greedy-method}
+\hspace{1cm}The greedy method is a discrete naturetechnique introduced by[7], which used
+to simplify the minimization of snake energy.The primarycharacteristic of the
+greedy snake is that it computes the movement of each snake point by looking
+at the neighborhood of pixels around the snake point and then moving the
+snake point to the position in the neighborhood that minimizes the energy
+term. The energy functional for the contour defined as follows:\\
+Equation 0015!!\\
+The image energy of the greedy snake is calculated as\\
+Equation 0016!!\\
+Which is almost the same energy term as in the Kass et al,except that there is
+missing a minus in front of the term.Therefore, the image energy in the
+neighborhood of the snake control point V (si) has to be normalized in a
+manner that assigns large negative values to pixels with high gradient values,
+while assigning lower negative values to pixels with a lower gradient value. The
+gradient magnitudes are all in the interval [0; 255]. The normalization of the
+neighborhood is calculated as\\
+Equation 0017!!\\
+Where min is the minimum gradient and max the maximum value in the
+neighborhood, and mag(x, y) the gradient magnitude of the actual point [7],this
+normalization sets the highest gradient magnitude in the neighborhood to -1
+and the lowest to 0. For example, whenall the gradient magnitude values are in
+the interval [46, 49] then the normalized values would be 0, -0.33, -0.66 and -1.\\
+The internal energy of the snake is divided in two terms $E_{ela}$ and $E_{cur}$ .\\
+The greedy used a different way for calculating the elasticity term. Thus,
+reducing the shrinking effect and making sure that the snake control points
+does not bunch up in places with high image energy. The elasticity term in the
+greedy is calculated in the neighborhood of each snake control point as\\
+Equation 0018!!\\
+Where $\bar{d}$ is the average distance between all points in the snake. After term has
+been calculated for each pixel in the neighborhood of a snake control point, the
+points which having a distance near the average will have the minimum
+value[7], so the minimum energy will be achieved when $\bar{d} - \| v(s_{i} - v(s_{i-1}) \| = 0$.\\
+The neighborhood is normalized as all the values are divided by the largest
+value in the neighborhoodgiving values between [0, 1], at the end of each
+iteration a new value of d̅ is computed [7].
+The second term of internal energy, which represent the curvature force,In
+Williams and M. Shah [7]evaluate a set of different ways of calculating the
+curvature term for a d discrete parametric curve whichcalculated in the
+neighborhood of each snake control point as:\\
+Equation 0019!!\\
+Once the curvature has been calculated for each point in the neighborhood of
+the current snake control point the values are normalized by dividing
+with the largest value. So we ends up with all the curvature values being in
+the range between [0, 1] as with the image and elasticity energy.\\
+Finding a suitable value for the parameter α and β is very important in the
+greedy method, because its determine the extent to which the contour is
+allowed to stretch or bend at all point. The relative sizes of $\alpha$ and $\beta$ can be
+chosen to control the influence of the corresponding constraints (elasticity and
+curvature)[7] ,so choosing value of $\alpha$ and $\beta$ are making effect of snake
+behavior see figure \ref{fig:mesh1}.
+\begin{figure}[h]
+        \centering
+        \includegraphics[width=3cm, height=6cm]{figurs/logouniv.jpeg}
+        \caption{Elastic and curvature energy in greedy}
+         \label{fig:mesh1}
+
+\end{figure}\\
+In the previous sections, we have explained how the energy of each term is
+calculated for the greedy method. In this part, we will describe the actual
+algorithm for how the points are moved.
+\subsubsection{Greedy algorithm}
+In the previous sections, we have explained how the energy of each term is
+calculated for the greedy method. In this part, we will describe the actual
+algorithm for how the points are moved.\\
+For each point/pixel in the neighborhood of a snake control point, the three
+energy terms are calculated. Then the algorithm sums the energy terms to get
+the total energy:
+\\
+Equation 0019!!\\
+Where $E_{ela}$(x, y) is the elasticity energy, $E_{ela}$(x, y) is the curvature energy and
+E img (x, y)is the image energy and (x, y) are the indices to the points in the
+neighborhood.
+Once the total energy has been calculated for each neighborhood, the greedy
+algorithm moves the snake control point to the position that has the minimum
+energy as it has shown in Figure 3, the values in the squares represent the
+value of total energy. Also pictured is the snake control point v ($s_i$) and the
+point before and after it.
+\begin{figure}[h]
+        \centering
+        \includegraphics[width=3cm, height=6cm]{figurs/logouniv.jpeg}
+        \caption{The energy function is computed at vi and each of its eight
+        neighbors. The point before and after it on the contour are used in
+        computing the continuity constraints. The location having the smallest
+        value is chosen as the new position of $v(s_i)$[7].}
+
+
+\end{figure}\\
+The red arrow shows to which point in the neighborhood the snake control
+point will move.After all the control points along the snake have been moved
+to a new position a newvalue of d̅ is computed. Figure 4 demonstrates how the
+algorithm works.
+\\
+\fbox{%
+
+\parbox{\textwidth}{
+\caption{fff}
+
+do  \color{blue}{ ”Main loop that moves the snake points to new locations”}\\ \color{black}
+for i = 1 to n \color{blue}“The first and last point in the snake are the same”\\\color{black}
+Emin = infinity\\
+for j = 1 to m \color{blue}“ m is the neighborhood size”\\ \color{black}
+E(j) = alpha(i) Eela(j) + beta(i) Ecurv(j) + Eimg(j)\\
+if E(j) < Emin then \color{blue} “Find location with min energy”\\ \color{black}
+Emin = E(j)\\
+jmin = j\\
+Move point v(i) to location jmin\\
+if jmin is not the current location then Ptsmoved++\\
+while Ptsmoved > threshold \color{blue}"Stop if only few points have moved "\\ \color{black}
+
+}%
+}
+\\\\
+The final step in the iteration of the greedy algorithm consists of checking
+whether the number of points moved in the iteration is under the threshold
+see figure 4.\\
+Threshold is used as a stopping criterion when the snake reach a
+minimum energy, which mean most of the points have stopped
+moving.
+
+
+\section{Problems of the classic active contours}\label{sec:problems-of-the-classic-active-contours}
+\hspace{1cm}The classical snakes have three main disadvantages, First, the active
+contours have difficulties progressing into boundary concavities. The
+second problem is that the initial contour must in general, be close to
+the true boundary or else it will predict an incorrect result. Thirdly,
+active contours need considerable processing time.\\
+Convergence to concave regions is an issue, because the contour is often left
+split across boundary concavities, as its shown figure (5) line drawing of a U-
+shaped object having a concave region, which is obvious in figure (5) that the
+snake fails to converge to the boundary concavity [8].
+Initialization is a problem because the capture range of the traditional potential
+force is generally small.The capture range can be increased by using a larger
+$\sigma$,but this blurs and distorts the edges [8].
+\begin{figure}[h]
+        \centering
+        \includegraphics[width=3cm, height=6cm]{figurs/logouniv.jpeg}
+        \caption{The snake cannot move into the concave boundary region}
+
+
+\end{figure}\\
+The classic active contour also so sensitive the choice of the weights to be
+assigned to each energy (the values of coefficients $\alpha, \beta, \gamma$); this is all the more
+critical as their number is important.\\
+In this chapter, we focus in a class of external force fields for deformable
+models that addresses both problems listed above. These fields, which we call
+gradient vector flow (GVF) fields.
+\section{GVF Snakes}\label{sec:gvf-snakes}
+Chenyang Xu and Jerry L. Prince [8]introduced a class of external force fields for
+deformable models that addresses the problems listed in last section.
+The main difference between the GVF-snake and the classical snake model lies
+on the different external forces. For the GVF-snake, the external force $F_{ext}$ is
+replaced by the gradient vector flow V(x, y) = (v(x, y), u(x, y)),where V is
+achieved by minimizing the following energy function:\\
+Equation 0020!!\\
+Where $\mu$is a regularization parameter and $\nabla$f denotes the edge map
+derived from the image I(x, y) as it’s calculated in equation (6).\\
+The parameter μis set according to the amount of noise present in the image
+(more noise mean increase value ofμ),when $\nabla$f is small; the energy is
+dominated by the first partial derivatives. When $\nabla$f is large, the second term
+dominates the energy and is minimized by setting V = $\nabla$f [8].\\
+In order to find the value of V, it is necessary to solve the following two Euler
+equations:
+\\
+Equation 0021---22!!\\
+Where $\nabla_2$ is the Laplacian operator,the equations (21) and (22)are solved
+iteratively using time derivative of u and v. These equations provide further
+intuition behind the GVF formulation. We note that in the homogenous region the second term
+in both regions is zero because the gradient of f(x, y) is zero.
+The numeral implementation of GVF can be calculated by treating u and v as
+functions of time t and solving the next generalized diffusion equations for t$\rightarrow \infty$
+\\Equation 0023       --         and                  ---24!!\\
+The first step to compute the solutions of equations (23) and (24) is to calculate
+the values of fx and fy, which can be done using common gradient operators,
+such as Sobel, Prewitt or isotropic operators [8]. Then, letting the indices i, j
+and n correspond to x, y, and t respectively, the solutions can be approximated
+iteratively using the next equations [9]:
+\\Equation 0025       --         and                  ---26!!\\
+Where\\
+$b(x, y) = f_{x}(x, y)^{2} + f_{y}(x, y)^{2} $\\
+$c(x, y) = b(x, y)f_{x}(x, y)^{2}$\\
+$d(x, y) = c(x, y)f_{y}(x, y)^{2}$\\
+$r = \frac{\mu \nabla t}{\nabla_{x}\nabla_{y}}$\\
+$\nabla_{x}$ and $\nabla_{y}$ represent the space between pixels, ∇t denotes the time step for
+each iteration.
+Under the assumption that b, c and d are bounded, the convergence is
+guaranteed as long as $r\leq1/4$ is maintained. Substituting this proportion on n
+if $\nabla_{x}$, $\nabla_{y}$ and $\mu$ are constant, then the next restriction should be maintained[9] :
+
+\subsection{Snake using GVF}\label{subsec:snake-using-gvf}
+After obtaining the GVF field V(x, y) and substituting as the external energy on
+eq. 1, the snake can be computed iteratively. The figure 6 shows the
+convergence of the snake.
+!--------!
+\section{Conclusion}\label{sec:conclusion-ch2}
+In this chapter we looked at the parametric active contours that
+are curves capable of detecting object boundaries through an energy
+minimization process , a lot of approach are proposed to solve problems of the
+traditional snake(initialization and have difficulties progressing into boundary
+concavities), we focus on the GVF field which we will use it in our approach .
