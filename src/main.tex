@@ -30,6 +30,7 @@
 \usepackage {fancybox}
 \usepackage{array,tabularx}
 \usepackage{colortbl}
+\usepackage{float}
 \usepackage[noend]{algorithmic}
 \usepackage[linesnumbered,ruled,vlined,boxed,commentsnumbered]{algorithm2e}
 %\usepackage{algpseudocode}
@@ -170,7 +171,11 @@
     \begin{center}
     \textbf{\huge \textsc{\itshape \textit Abstract}}\\
     \end{center}
-    \qquad ...........................
+    \qquad Image segmentation by active contours is a method to locate the boundaries of objects,
+    using a curve that deforms by minimization of energies, which take a considerable time for execution.
+    In this paper, we propose a parallel approach to reduce computational time by using the GVF Snake.
+    The proposed approach has two main steps an initialization using k-means, and a parallel execution of the contour.
+    Our approach was tested using a different image: the obtained results were encouraging.
 
     %%resume %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \newpage
@@ -194,25 +199,36 @@
     \rhead{Introduction générale}
     \pagenumbering{arabic}
 
-    ..................................................
+    Image segmentation is one of the most important stages in digital image analysis,
+    which its objective is to separate the different shapes, structures, or objects that are
+    located inside the image. There are different techniques used for the segmentation of pixels
+    of interest from the image. Active contour is one of the active models in segmentation techniques,
+    which use energy constraints and forces in the image for separation of the interest region.
+    Although the computational time of its algorithm is commonly considered as a drawback to the use
+    of it in some applications, a lot of research proposed methods to reduce the computational time.\\
+    In this work, we propose a parallel implementation approach for the active contour that can perform
+    efficiently and reduce the computational time by using an improved model of the classic active contour
+    the GVF Snake. The approach we are proposing involves two main steps:  an initialization using the
+    k-means algorithm and parallel execution of the GVF snake.\\
+    The manuscript is organized as follows. Section (\ref{ch:generalities-on-image-processing}) is devoted to
+    image generalizations by citing some definitions and methods of image segmentation and image enhancement.
+    Section (\ref{ch:active-contours-:-gvf-snakes}) concentrates mainly on active contour and their
+    limit and its improved descendant model GVF snake, which we use in our approach. Sections (\ref{ch:proposed-approach}) describes
+    the study and implementation of  the proposed approach. We detail the different steps we have gone through,
+    and evaluate the accuracy and applicability of the proposed approach via an experiment. A conclusion is given
+    in Section (4).
 
     %% chapitre 1%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \include{chapiter1/main}
 
     %% chapitre 2%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \include{chapiter2/main}
+
      %% chapitre 3%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \include{chapiter3/main}
 
     %% conclusion generale%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    \chapter*{General conclusion}
-    \addcontentsline{toc}{chapter}{General conclusion}
-    \lhead{}
-    \cfoot{\bfseries \thepage}
-    \rhead{General conclusion}
-    \markboth{droite}{General conclusion}
-
-    .............................................
+    \include{chapiter4/main}
 
     %%References%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \clearpage
@@ -249,6 +265,9 @@
         \bibitem[25]{2.7} D. J. Williams and M. Shah. A fast algorithm for active contours and curvature estimation. CVGIP: Image Understand ., 55(1):14{26, 1992..}
         \bibitem[26]{2.8} C. Xu and J. L. Prince. Snakes, shapes, and gradient vector flow. IEEE Transactions on Image Processing, vol 7 no .3 pp . 359-369 1998 ,
         \bibitem[27]{2.9} Alejandro Cartas-Ayala, s1056541 .Gradient Vector Flow Snakes.
+        \bibitem[28]{3.1} \url{https://en.wikipedia.org/wiki/Convex_hull}
+        \bibitem[29]{3.2} \url{https://iq.opengenus.org/quick-hull-convex-hull/}
+        \bibitem[30]{3.3} \url{https://www.geeksforgeeks.org/quickhull-algorithm-convex-hull/}
 
     \end{thebibliography}
 
